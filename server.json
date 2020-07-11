@@ -1,0 +1,46 @@
+{
+	"variables": {
+		"client_id": "{{env `ARM_CLIENT_ID`}}",
+		"client_secret": "{{env `ARM_CLIENT_SECRET`}}",
+		"subscription_id": "{{env `ARM_SUBSCRIPTION_ID`}}"
+	},
+	"builders": [{
+		"type": "azure-arm",
+
+    "subscription_id": "{{user `subscription_id`}}",
+    "client_id": "{{user `client_id`}}",
+    "client_secret": "{{ user `client_secret`}}",
+	"tenant_id": "{{user `tenant_id`}}",
+	
+	"os_type": "Linux",
+    "image_publisher": "Canonical",
+    "image_offer": "UbuntuServer",
+	"image_sku": "18.04-LTS",
+	
+	"vm_size": "Standard_B1s",
+
+	"managed_image_resource_group_name": "DeployingWebserverInAzure",
+	"managed_image_name": "my-web-image",
+	"location": "East US",
+
+	"azure_tags": {
+        "project": "Deploying a web server in Azure",
+        "author": "Geetika Jindal",
+        "job": "Webserver"
+    }
+
+
+	}],
+	"provisioners": [{
+		"inline": [
+			"echo 'Hello, World!' > index.html",
+			"nohup busybox httpd -f -p 80 &"
+		],
+		"inline_shebang": "/bin/sh -x",
+		"type": "shell",
+		"pause_before": "10s",
+		"max_retries": 5,
+		"timeout": "5m"
+		
+	}]
+}
