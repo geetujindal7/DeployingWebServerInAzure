@@ -54,7 +54,7 @@ resource "azurerm_network_security_group" "NetworkSecurityGroup" {
     protocol                   = "*"
     source_port_range          = "*"
     destination_port_range     = "*"
-    source_address_prefix      = "*"
+    source_address_prefix      = "Internet"
     destination_address_prefix = "*"
   }
 
@@ -134,7 +134,6 @@ resource "azurerm_network_interface" "network_interface" {
     private_ip_address_allocation = "Dynamic"
     
     # load_balancer_backend_address_pools_ids = [azurerm_lb_backend_address_pool.alb_backend.id]
-    #  public_ip_address_id         = azurerm_public_ip.api[count.index].id
   }
   tags                         =  var.tags
 }
