@@ -110,28 +110,27 @@ Note -  The tags variable is also set as any resources without tag would be not 
 #### Output
 
 The Output of Packer file-
-![Optional Text](/Images/packer.png)
 <img src="/Images/packer.png">
 
 
 The Output of importing resource-
-<img src="/Images/imported.png>
+<img src="/Images/imported.png">
 
 
 The Output of plan command-
-<img src="/Images/plan.png>
+<img src="/Images/plan.png">
 
 
 The output of apply Command-
-<img src="/Images/Apply.png>
+<img src="/Images/Apply.png">
 
 
 The output of destroy command -
-<img src="/Images/destroy.png>
+<img src="/Images/destroy.png">
 
 
 The output of tagging-policy -
-<img src="/tagging-policy output/tagging-policy.png>
+<img src="/tagging-policy output/tagging-policy.png">
 
 
 #### Customizing it for use -
