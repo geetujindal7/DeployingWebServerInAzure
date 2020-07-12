@@ -36,7 +36,7 @@ Run -   `az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/
 }
 ```
 
-4. List your credentials- az account show
+4. List your credentials- `az account show`
 
 ```sh
 [
@@ -77,12 +77,12 @@ Run -   `az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/
 Run -  `packer build server.json`
 (It will create the image)
 
-Note: server.json is the name of the packer file I am using. Ensure your are in the directory where this file is located, otherwise, the project would not validate and build.
+Note: Please check the path of the file server.json to run it without any error. Server.json file is the packer file.
 
 Deploy the Infrastructure
 
 
-1. Set the in TF_VAR_ environment variables, keep in mind that the names are case sensitive
+1. Set the in TF_VAR_ environment variables or avoid defining it again and again.
 ```sh
 $ export TF_VAR_subscription_id=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx
 $ export TF_VAR_client_id=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx
@@ -104,7 +104,7 @@ run - `terraform import azurerm_resource_group.rg /subscriptions/00000000-0000-0
 6. Run `terraform destroy`
 
 
-Note -  The tags variable is also set as any resources without tag would be not be created as stated in my Azure policy.
+Note - I have created a policy that ensures all indexed resources are tagged. This  helps with organization and tracking, and make it easier to log when things go wrong.
 
 
 #### Output
@@ -135,4 +135,6 @@ The output of tagging-policy -<br />
 
 #### Customizing it for use -
 
-The customizable variables are in var.tf file, you can change some variables like value i.e number of VMs, `change the value from “2” to the number of desired VMs` to use in the load balanced pool. After changing to the desired value, execute terraform apply again.
+The customizable variables are in var.tf file, you can change some variables like value i.e number of VMs, `change the value from “2” to the number of desired VMs`. After changing the value, run `terraform apply` again. You will get a new output. 
+
+                                                                Hope you liked this project :)
