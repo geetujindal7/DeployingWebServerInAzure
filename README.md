@@ -137,4 +137,4 @@ The output of tagging-policy -<br />
 
 The customizable variables are in var.tf file, you can change some variables like value i.e number of VMs, `change the value from “2” to the number of desired VMs`. After changing the value, run `terraform apply` again. You will get a new output. 
 
-                                                                Hope you liked this project :)
+                                           Hope you liked this project :)
