@@ -19,7 +19,7 @@ For this project, you will write a Packer template and a Terraform template to d
 ### Instructions-
 
 Get your Azure Credentials and Create the VM Image with the help of packer
-``Create a resource group name "DeployingWebserverInAzure" in portal Azure`` else it will say "Cannot locate the manage image resource group"
+``Create a resource group name "DeployingWebserverInAzure" in http://portal.azure.com/`` else it will say "Cannot locate the manage image resource group"
 
 1. Login into azure - `az Login`
 2. Create an rbac for loging in: az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<subscription_id>"
